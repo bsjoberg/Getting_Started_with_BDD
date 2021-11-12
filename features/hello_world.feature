@@ -6,5 +6,5 @@ Feature: Dev environment configured
 
   Scenario: Say hello from local website
     Given I have a web server running
-    When I goto the home page
+    When I goto the hello world page
     Then I see "Hello World" in the title
