@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home Page</title>
+    <title>Online Bank</title>
 </head>
 <body>
-    <h1>Home Page</h1>
+    <h1>Online Bank</h1>
+    <p>Welcome to our online bank</p>
+    <form method="POST" action="{% url 'sign_up' %}">
+        <input id="sign_up" type="submit" value="Sign Up" />
+        {% csrf_token %}
+    </form>
 </body>
 </html>

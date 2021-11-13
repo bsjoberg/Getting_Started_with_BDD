@@ -5,7 +5,9 @@ def hello_world_page(request):
     return render(request, 'hello_world.html')
 
 
-# Create your views here.
 def home_page(request):
     return render(request, 'home.html')
 
+
+def sign_up_page(request):
+    return render(request, 'sign_up.html')
