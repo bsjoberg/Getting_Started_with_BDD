@@ -2,6 +2,7 @@ from behave import given, when, then
 from django.contrib.staticfiles.testing import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import time
 
 
 class SignUpStepsTestCase(LiveServerTestCase):
@@ -12,8 +13,8 @@ class SignUpStepsTestCase(LiveServerTestCase):
         self.browser.get('http://localhost:8000')
         assert 'Online Bank' in self.browser.title, 'Expected {} but got {}'.format('Online Bank', self.browser.title)
 
-    @when(u'I submit an application with valid details')
-    def step_impl(self):
+    @when(u'I submit an application with valid details for a "{account_type}" account')
+    def step_impl(self, account_type):
         # Click on the sign up button
         self.browser.find_element(By.ID, 'sign_up').click()
 
@@ -22,14 +23,13 @@ class SignUpStepsTestCase(LiveServerTestCase):
 
         # Fill in the details
 
-    @when(u'Select an account type')
-    def step_impl(self):
-        # Select an account type
+        # Select account type
+        time.sleep(1)
 
-        # Click the submit application button
-
-        raise NotImplementedError(u'STEP: When Select an account type')
+        # Submit the application
+        self.browser.find_element(By.ID, 'submit').click()
 
     @then(u'I am notified of my account status')
     def step_impl(self):
-        raise NotImplementedError(u'STEP: Then I am notified of my account status')
+        status_message = self.browser.find_element(By.TAG_NAME, 'body').text
+        assert 'Account approved' in status_message, 'Expected Account approved but got {}'.format(status_message)
