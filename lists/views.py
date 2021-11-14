@@ -11,3 +11,7 @@ def home_page(request):
 
 def sign_up_page(request):
     return render(request, 'sign_up.html')
+
+
+def application_status_page(request):
+    return render(request, 'application_status.html')

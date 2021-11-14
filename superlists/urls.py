@@ -20,7 +20,7 @@ from lists import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$', views.home_page, name='home'),
-    #path('', views.home_page, name='home'),
     re_path(r'^hello_world/', views.hello_world_page, name='hello_world'),
     re_path(r'^sign_up/', views.sign_up_page, name='sign_up'),
+    re_path(r'^application_status/', views.application_status_page, name="application_status"),
 ]
