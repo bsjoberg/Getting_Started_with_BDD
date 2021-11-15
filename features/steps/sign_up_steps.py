@@ -11,7 +11,8 @@ class SignUpStepsTestCase(LiveServerTestCase):
     def step_impl(self):
         self.browser = webdriver.Chrome()
         self.browser.get('http://localhost:8000')
-        assert 'Online Bank' in self.browser.title, 'Expected {} but got {}'.format('Online Bank', self.browser.title)
+        title = self.browser.title
+        assert 'Online Bank' in title, 'Expected {} but got {}'.format('Online Bank', title)
 
     @when(u'I submit an application with valid details for a "{account_type}" account')
     def step_impl(self, account_type):
@@ -29,7 +30,7 @@ class SignUpStepsTestCase(LiveServerTestCase):
         # Submit the application
         self.browser.find_element(By.ID, 'submit').click()
 
-    @then(u'I am notified of my account status')
-    def step_impl(self):
-        status_message = self.browser.find_element(By.TAG_NAME, 'body').text
-        assert 'Account approved' in status_message, 'Expected Account approved but got {}'.format(status_message)
+    @then(u'I am notified of my "{expected_status}" account status')
+    def step_impl(self, expected_status):
+        status = self.browser.find_element(By.TAG_NAME, 'body').text
+        assert 'Account ' + expected_status in status, 'Expected Account approved but got {}'.format(status)
