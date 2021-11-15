@@ -14,7 +14,7 @@ class SignUpStepsTestCase(LiveServerTestCase):
         title = self.browser.title
         assert 'Online Bank' in title, 'Expected {} but got {}'.format('Online Bank', title)
 
-    @when(u'I submit an application with valid details for a "{account_type}" account')
+    @when(u'I apply with valid details for a "{account_type}" account')
     def step_impl(self, account_type):
         # Click on the sign up button
         self.browser.find_element(By.ID, 'sign_up').click()
