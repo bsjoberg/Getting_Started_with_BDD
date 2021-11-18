@@ -7,7 +7,7 @@ import time
 
 class SignUpStepsTestCase(LiveServerTestCase):
 
-    @given(u'I navigated to our online bank website')
+    @given(u'I navigated to the most amazing online bank website ever')
     def step_impl(self):
         self.browser = webdriver.Chrome()
         self.browser.get('http://localhost:8000')
