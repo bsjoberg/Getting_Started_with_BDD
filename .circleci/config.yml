@@ -16,9 +16,7 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
-      - run:
-        - name: Start server
-        - command: docker-compose up
+
       - run: mkdir reports
       - run:
           name: Download Selenium
@@ -31,6 +29,9 @@ jobs:
           key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
           paths:
             - "venv"
+      - run:
+          - name: Start server
+          - command: docker-compose up
       - run:
           name: Running unit tests
           command: |
