@@ -33,4 +33,4 @@ class SignUpStepsTestCase(LiveServerTestCase):
     @then(u'I receive an "{expected_status}" notification')
     def step_impl(self, expected_status):
         status = self.browser.find_element(By.TAG_NAME, 'body').text
-        assert 'Account ' + expected_status in status, 'Expected Account approved but got {}'.format(status)
+        assert expected_status in status, 'Expected Account approved but got {}'.format(status)
