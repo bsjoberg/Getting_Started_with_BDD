@@ -29,9 +29,6 @@ jobs:
           paths:
             - "venv"
       - run:
-          name: Start server
-          command: docker compose up
-      - run:
           name: Running unit tests
           command: |
             . venv/bin/activate
@@ -40,6 +37,7 @@ jobs:
           name: Run behave tests
           command: |
             . venv/bin/activate
+            python manage.py runserver
             behave --junit
       - store_artifacts:
           path: reports/
