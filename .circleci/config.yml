@@ -3,10 +3,6 @@ jobs:
   build:
     docker:
       - image: circleci/python:3.6
-      - image: circleci/node:buster-browsers
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
       - restore_cache:
