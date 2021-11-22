@@ -29,8 +29,8 @@ jobs:
           key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
           paths:
             - "venv"
-      - run:
-          - name: Start server
+      #- run:
+          #- name: Start server
           #- command: which docker
       - run:
           name: Running unit tests
