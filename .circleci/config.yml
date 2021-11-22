@@ -34,10 +34,21 @@ jobs:
             . venv/bin/activate
             python3 manage.py test
       - run:
-          name: Run behave tests
+          name: Migrate DB changes
+          command: |
+            . venv/bin/activate
+            python manage.py migrate
+      - run:
+          name: Start server
           command: |
             . venv/bin/activate
             python manage.py runserver
+          background: true
+      - run:
+          name: Run behave tests
+          command: |
+            curl --retry-delay 5 --retry 10  --retry-connrefused http://localhost:8000
+            . venv/bin/activate
             behave --junit
       - store_artifacts:
           path: reports/
