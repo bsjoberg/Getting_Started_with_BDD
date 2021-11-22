@@ -1,1 +1,4 @@
 Django~=3.2.8
+xmlrunner~=1.7.7
+behave~=1.2.6
+selenium~=4.0.0

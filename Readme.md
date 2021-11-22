@@ -8,6 +8,7 @@ Example code for blog post series on How to do BDD in Python
 - `pip install behave`
 - `pip install django`
 - `pip install selenium`
+- `pip install unittest-xml-reporting`
 
 # Misc
 To run the `behave` tests you will need either the chrome or firefox webdriver or both. Just download them 
