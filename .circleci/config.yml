@@ -31,7 +31,7 @@ jobs:
             - "venv"
       - run:
           - name: Start server
-          - command: docker-compose up
+          - command: docker compose up
       - run:
           name: Running unit tests
           command: |
