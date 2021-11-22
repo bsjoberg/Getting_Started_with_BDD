@@ -42,8 +42,7 @@ jobs:
       - run:
           name: Start server
           command: |
-            . venv/bin/activate
-            python manage.py runserver 8000
+            python manage.py runserver 8000 &
       - run:
           name: Run behave tests
           command: |
