@@ -26,10 +26,3 @@ class SignUpTest(TestCase):
     def test_uses_application_status_template(self):
         response = self.client.get('/application_status/')
         self.assertTemplateUsed(response, 'application_status.html')
-
-
-if __name__ == '__main__':
-    with open('/reports/results.xml', 'wb') as output:
-        unittest.main(
-            testRunner=xmlrunner.XMLTestRunner(output=output),
-            failfast=False, buffer=False, catchbreak=False)
