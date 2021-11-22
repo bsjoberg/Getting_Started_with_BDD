@@ -34,7 +34,9 @@ jobs:
             python3 manage.py test
       - run:
           name: Run behave tests
-          command: behave --junit
+          command: |
+            . venv/bin/activate
+            behave --junit
       - store_artifacts:
           path: reports/
           destination: python_app
