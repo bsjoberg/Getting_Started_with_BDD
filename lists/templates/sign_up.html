@@ -8,23 +8,48 @@
 <h1>Sign-up form</h1>
 <p>Submit a request to get a bank account</p>
 <form method="POST" action="{% url 'application_status' %}">
-    <label for="first_name">First name:</label><br>
-    <input type="text" id="first_name" name="first_name"><br>
-    <label for="last_name">Last name:</label><br>
-    <input type="text" id="last_name" name="last_name"><br><br>
-
-    <label for="initial_deposit">Amount of initial deposit:</label><br>
-    <input type="text" id="initial_deposit" name="initial_deposit"><br><br>
-
-    <label for="account_type">Account type:</label><br>
-    <input type="radio" id="checking" name="account_type" value="checking">
-    <label for="checking">Checking</label><br>
-    <input type="radio" id="saving" name="account_type" value="saving">
-    <label for="saving">Saving</label><br>
-    <input type="radio" id="money_market" name="account_type" value="money_market">
-    <label for="money_market">Money market</label><br><br>
-
-    <input type="submit" id="submit" value="Submit">
+    <table>
+        <tr>
+            <td><label for="first_name">First name:</label></td>
+            <td><label for="last_name">Last name:</label></td>
+        </tr>
+        <tr>
+            <td><input type="text" id="first_name" name="first_name"></td>
+            <td><input type="text" id="last_name" name="last_name"></td>
+        </tr>
+        <tr>
+            <td><label for="initial_deposit">Amount of initial deposit:</label></td>
+        </tr>
+        <tr>
+            <td><input type="text" id="initial_deposit" name="initial_deposit"></td>
+        </tr>
+        <tr>
+            <td><label for="account_type">Account type:</label></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" id="checking" name="account_type" value="checking">
+                <label for="checking">Checking</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" id="saving" name="account_type" value="saving">
+                <label for="saving">Saving</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" id="money_market" name="account_type" value="money_market">
+                <label for="money_market">Money market</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" id="submit" value="Submit">
+            </td>
+        </tr>
+    </table>
     {% csrf_token %}
 </form>
 
