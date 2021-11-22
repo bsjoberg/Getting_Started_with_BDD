@@ -31,7 +31,7 @@ jobs:
             - "venv"
       - run:
           - name: Start server
-          - command: which docker
+          #- command: which docker
       - run:
           name: Running unit tests
           command: |
