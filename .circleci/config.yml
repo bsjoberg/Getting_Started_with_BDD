@@ -45,11 +45,11 @@ jobs:
             python manage.py runserver 8000 &
             sleep 10
           background: true
-      - run:
-          name: Run behave tests
-          command: |
-            . venv/bin/activate
-            behave --junit
+#      - run:
+#          name: Run behave tests
+#          command: |
+#            . venv/bin/activate
+#            behave --junit
       - store_artifacts:
           path: reports/
           destination: python_app
