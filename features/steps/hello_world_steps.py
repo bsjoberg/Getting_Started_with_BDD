@@ -13,7 +13,7 @@ class HelloWorldTestCase(LiveServerTestCase):
 
     @given(u'I have a web server running')
     def step_impl(self):
-        self.result = webdriver.Chrome()
+        self.result = webdriver.Firefox()
 
     @when(u'I say hi')
     def step_impl(self):

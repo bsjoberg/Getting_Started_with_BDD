@@ -9,7 +9,7 @@ class SignUpStepsTestCase(LiveServerTestCase):
 
     @given(u'I navigated to the most amazing online bank website ever')
     def step_impl(self):
-        self.browser = webdriver.Chrome()
+        self.browser = webdriver.Firefox()
         self.browser.get('http://localhost:8000')
         title = self.browser.title
         assert 'Online Bank' in title, 'Expected {} but got {}'.format('Online Bank', title)
