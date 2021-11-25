@@ -1,5 +1,9 @@
 Example code for blog post series on How to do BDD in Python
 
+# Running
+- `python manage.py runserver`
+- Navigate to localhost:8000 in your browser
+
 # Django setup
 - `django-admin.exe startproject superlists .`
 - `python manage.py startapp lists`
