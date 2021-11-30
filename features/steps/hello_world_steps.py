@@ -11,22 +11,22 @@ class HelloWorldTestCase(LiveServerTestCase):
     def step_impl(self):
         assert HelloWorld() is not None
 
-    @given(u'I have a web server running')
-    def step_impl(self):
-        self.result = webdriver.Chrome()
-
     @when(u'I say hi')
     def step_impl(self):
         greeter = HelloWorld()
         self.result = greeter.say_hi()
 
-    @when(u'I go to the hello world page')
-    def step_impl(self):
-        self.result.get('http://localhost:8000/hello_world')
-
     @then(u'I hear "{expected_result}"')
     def step_impl(self, expected_result):
         assert expected_result == self.result, 'Expect {} but got {}'.format(expected_result, self.result)
+
+    @given(u'I have a web server running')
+    def step_impl(self):
+        self.result = webdriver.Chrome()
+
+    @when(u'I go to the hello world page')
+    def step_impl(self):
+        self.result.get('http://localhost:8000/hello_world')
 
     @then(u'I see "{expected_result}" in the title')
     def step_impl(self, expected_result):
