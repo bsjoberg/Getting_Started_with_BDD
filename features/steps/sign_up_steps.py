@@ -30,6 +30,7 @@ class SignUpStepsTestCase(LiveServerTestCase):
         # Submit the application
         self.browser.find_element(By.ID, 'submit').click()
 
+    @then(u'I receive a "{expected_status}" notification')
     @then(u'I receive an "{expected_status}" notification')
     def step_impl(self, expected_status):
         actual_status = self.browser.find_element(By.TAG_NAME, 'body').text
