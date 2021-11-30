@@ -20,7 +20,7 @@ class HelloWorldTestCase(LiveServerTestCase):
         greeter = HelloWorld()
         self.result = greeter.say_hi()
 
-    @when(u'I goto the hello world page')
+    @when(u'I go to the hello world page')
     def step_impl(self):
         self.result.get('http://localhost:8000/hello_world')
 
