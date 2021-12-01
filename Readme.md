@@ -10,6 +10,10 @@ Example code for blog post series on How to do BDD in Python
 # Dependencies
 - See the requirements text file.
 
+# Running the tests
+- Unit tests - `python manage.py test`
+- Behavior tests - `behave`
+
 # Misc
 To run the `behave` tests you will need either the chrome or firefox webdriver or both. Just download them 
 and extract them. You can then add the path to your environment variables or put the executable in 
